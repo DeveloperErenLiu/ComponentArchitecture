@@ -1,0 +1,15 @@
+PODS:
+  - Masonry (1.0.2)
+  - UserCenterModule (1.1)
+
+DEPENDENCIES:
+  - Masonry
+  - UserCenterModule (~> 1.1)
+
+SPEC CHECKSUMS:
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  UserCenterModule: 435b73da4fc91a7438aa35f981059fbc2f3b8313
+
+PODFILE CHECKSUM: 597caaa007ff88b32092307789cbc5a3686d828e
+
+COCOAPODS: 1.1.1

@@ -1,0 +1,9 @@
+platform :ios, '7.0'
+
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://coding.net/u/LiuXiaoZhuang/p/UserCenterModuleSpec/git'
+
+target 'MainProject' do
+    pod 'Masonry'
+    pod 'UserCenterModule', '~> 1.1'
+end
