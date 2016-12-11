@@ -7,6 +7,8 @@ source 'https://git.coding.net/LiuXiaoZhuang/HomePageModuleSpec.git'
 
 target 'MainProject' do
     pod 'Masonry'
+    pod 'MGJRouter'
+    
     pod 'UserCenterModule', '~> 1.1'
     pod 'HomePageModule',   '~> 1.0'
 end
