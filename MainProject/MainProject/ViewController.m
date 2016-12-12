@@ -7,17 +7,22 @@
 //
 
 #import "ViewController.h"
-
-@interface ViewController ()
-
-@end
+#import <MGJRouter/MGJRouter.h>
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (IBAction)skipToUserCenterModuleAction:(UIButton *)sender {
     
+    [MGJRouter openURL:@"CTB://UserCenter/PushMainVC"
+          withUserInfo:@{@"navigationVC" : self.navigationController}
+            completion:nil];
+}
+
+- (IBAction)skipToHomePageModuleAction:(UIButton *)sender {
     
+    [MGJRouter openURL:@"CTB://HomePage/PushMainVC"
+          withUserInfo:@{@"navigationVC" : self.navigationController}
+            completion:nil];
 }
 
 @end

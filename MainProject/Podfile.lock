@@ -1,21 +1,23 @@
 PODS:
-  - HomePageModule (1.0)
+  - HomePageModule (1.1):
+    - MGJRouter
   - Masonry (1.0.2)
   - MGJRouter (0.9.3)
-  - UserCenterModule (1.1)
+  - UserCenterModule (1.2):
+    - MGJRouter
 
 DEPENDENCIES:
-  - HomePageModule (~> 1.0)
+  - HomePageModule (~> 1.1)
   - Masonry
   - MGJRouter
-  - UserCenterModule (~> 1.1)
+  - UserCenterModule (~> 1.2)
 
 SPEC CHECKSUMS:
-  HomePageModule: ab67647e2b94195225664c440a2083e263b0747a
+  HomePageModule: 203ab07925cc934a8c22b2fc6808a0eb673fbf69
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MGJRouter: f65821e2aeffc8f9e84b254c8f1c0dd80f048aa9
-  UserCenterModule: 435b73da4fc91a7438aa35f981059fbc2f3b8313
+  UserCenterModule: 6e3f9d55c49316cb60f404b47558e347d993f588
 
-PODFILE CHECKSUM: 78e8c20bc895a78ac01b1a347d16881ac16d4a96
+PODFILE CHECKSUM: 33575b4c2454a9e37de5cbfa3b65f1abf4a5025c
 
 COCOAPODS: 1.1.1
