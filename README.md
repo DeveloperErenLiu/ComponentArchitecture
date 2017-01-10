@@ -30,7 +30,9 @@ https://git.coding.net/LiuXiaoZhuang/HomePageModuleSpec.git
 
 找到私有仓库`HomePageModule`所在的目录，在这个目录下通过下面命令，创建一个新的`.podspec`文件，在这个文件中来进行私有仓库的一些配置工作。
 
-​	pod spec create HomePageModule
+```
+pod spec create HomePageModule
+```
 
 创建这个文件后，需要修改里面的一些东西，例如这里我用`HomePageModule`私有仓库做例子。这里面修改的东西，表示你的`Spec`私有仓库的一些特征，例如`name`、`source`、`version`之类的，在进行`pod search`操作时候的显示结果，也是由这个文件决定的。
 
