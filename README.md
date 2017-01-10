@@ -75,17 +75,23 @@ HomePageModule passed validation.
 
 通过下面命令，添加远程`Spec`仓库到本地，相当于建立一个连接关系。(需要注意这里的地址是`Spec`的地址，不要写错)
 
-​	pod repo add HomePageModule https://git.coding.net/LiuXiaoZhuang/HomePageModuleSpec.git
+```
+pod repo add HomePageModule https://git.coding.net/LiuXiaoZhuang/HomePageModuleSpec.git
+```
 
 添加完成后，用下面命令检查一下是否成功。
 
-​	pod repo lint
+```
+pod repo lint
+```
 
 ##### 提交代码到Spec私有仓库
 
 如果上面命令没问题后，这就代表组件的私有仓库和其对应的`Spec`仓库，已经可以提交并向外提供代码了。这时候我们就可以进行代码开发，开发完成之后通过下面的命令，将代码提交或更新到`Spec`仓库。
 
-​	pod repo push HomePageModule HomePageModule.podspec
+```
+pod repo push HomePageModule HomePageModule.podspec
+```
 
 提交给`Spec`私有仓库的文件，可以通过`.podspec`文件的`s.source_files`字段进行过滤，符合过滤条件的文件就都会被提交到`Spec`仓库。例如上面我们将所有`.h`和`.m`文件都提交到`Spec`仓库，除了这些还可以设置`imageAssets`、`XIB`、`Bundle`等文件。
 
