@@ -2,6 +2,12 @@
 
 ***
 
+#### 组件化架构文章
+
+[组件化架构漫谈](https://www.jianshu.com/p/67a6004f6930)
+
+
+
 ### 创建私有仓库
 
 ##### 创建私有代码仓库
@@ -23,6 +29,8 @@ https://git.coding.net/LiuXiaoZhuang/HomePageModule.git
 例如我们创建的`Spec`仓库是下面的地址，最后提供给其他人的代码都要被提交到这里。创建`Spec`代码仓库和平时创建一样，只是这里暂时先为空，也不需要进行`Clone`操作。
 
 https://git.coding.net/LiuXiaoZhuang/HomePageModuleSpec.git
+
+
 
 ### 搭建环境
 
@@ -54,6 +62,8 @@ pod spec create HomePageModule
 		s.frameworks    = 'UIKit'
 		s.platform      = :ios
 	end
+
+
 
 ### 开发过程
 
@@ -97,12 +107,14 @@ pod repo push HomePageModule HomePageModule.podspec
 
 提交给`Spec`私有仓库的文件，可以通过`.podspec`文件的`s.source_files`字段进行过滤，符合过滤条件的文件就都会被提交到`Spec`仓库。例如上面我们将所有`.h`和`.m`文件都提交到`Spec`仓库，除了这些还可以设置`imageAssets`、`XIB`、`Bundle`等文件。
 
+
+
 ### 使用私有仓库代码
 
 当`Spec`私有仓库中有可用的代码后，就可以通过`CocoaPods`命令来使用组件代码了。在`Podfile`文件中需要声明私有仓库地址，例如下面代码。
 
 	source 'https://git.coding.net/LiuXiaoZhuang/HomePageModuleSpec.git'
-	
+
 	target 'MainProject' do
 	    # 第三方库
 	    pod 'Masonry'
