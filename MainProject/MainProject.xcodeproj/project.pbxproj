@@ -13,6 +13,8 @@
 		791CFF481DFBCB1E00121A62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 791CFF461DFBCB1E00121A62 /* Main.storyboard */; };
 		791CFF4A1DFBCB1E00121A62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 791CFF491DFBCB1E00121A62 /* Assets.xcassets */; };
 		791CFF4D1DFBCB1E00121A62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 791CFF4B1DFBCB1E00121A62 /* LaunchScreen.storyboard */; };
+		799567B6217F0F7F00B93760 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 799567B5217F0F7F00B93760 /* HomeViewController.m */; };
+		799567B9217F109200B93760 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 799567B8217F109200B93760 /* LoginViewController.m */; };
 		B9B84A5302B9AC08C5569ECE /* libPods-MainProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9519F3DA8B7559B24F09783 /* libPods-MainProject.a */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +30,10 @@
 		791CFF491DFBCB1E00121A62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		791CFF4C1DFBCB1E00121A62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		791CFF4E1DFBCB1E00121A62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		799567B4217F0F7F00B93760 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		799567B5217F0F7F00B93760 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		799567B7217F109200B93760 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		799567B8217F109200B93760 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		949C4EEBD172323874701483 /* Pods-MainProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MainProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-MainProject/Pods-MainProject.release.xcconfig"; sourceTree = "<group>"; };
 		C9519F3DA8B7559B24F09783 /* libPods-MainProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MainProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -78,6 +84,10 @@
 				791CFF411DFBCB1E00121A62 /* AppDelegate.m */,
 				791CFF431DFBCB1E00121A62 /* ViewController.h */,
 				791CFF441DFBCB1E00121A62 /* ViewController.m */,
+				799567B4217F0F7F00B93760 /* HomeViewController.h */,
+				799567B5217F0F7F00B93760 /* HomeViewController.m */,
+				799567B7217F109200B93760 /* LoginViewController.h */,
+				799567B8217F109200B93760 /* LoginViewController.m */,
 				791CFF461DFBCB1E00121A62 /* Main.storyboard */,
 				791CFF491DFBCB1E00121A62 /* Assets.xcassets */,
 				791CFF4B1DFBCB1E00121A62 /* LaunchScreen.storyboard */,
@@ -229,6 +239,8 @@
 				791CFF451DFBCB1E00121A62 /* ViewController.m in Sources */,
 				791CFF421DFBCB1E00121A62 /* AppDelegate.m in Sources */,
 				791CFF3F1DFBCB1E00121A62 /* main.m in Sources */,
+				799567B6217F0F7F00B93760 /* HomeViewController.m in Sources */,
+				799567B9217F109200B93760 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +399,7 @@
 				791CFF531DFBCB1E00121A62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

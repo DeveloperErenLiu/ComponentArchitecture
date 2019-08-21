@@ -24,13 +24,11 @@ https://git.coding.net/LiuXiaoZhuang/HomePageModule.git
 
 很多人都在这块犯错了，所以这里要着重讲一下。就像`CocoaPods`的开源仓库一样，平时用来开发的代码和发布给别人使用的代码，是不在同一个仓库的。
 
-例如`AFNetworking`，代码仓库是在[AFNetworking代码仓库](https://github.com/AFNetworking/AFNetworking.git)这里，而`AFNetworking`提供给其他人使用的时候，需要先提交到`CocoaPods`的`Spec`仓库，然后我们从`Pod Install`都是从`Spec`仓库拉去下来的代码。这么说大家理解了吧，不理解就去我博客里留言吧。
+例如`AFNetworking`，代码仓库是在[AFNetworking代码仓库](https://github.com/AFNetworking/AFNetworking.git)这里，而`AFNetworking`提供给其他人使用的时候，需要先提交到`CocoaPods`的`Spec`仓库，然后我们执行`pod install`都是从`Spec`仓库拉去下来的代码。这么说大家理解了吧，不理解就去我博客里留言吧。
 
 例如我们创建的`Spec`仓库是下面的地址，最后提供给其他人的代码都要被提交到这里。创建`Spec`代码仓库和平时创建一样，只是这里暂时先为空，也不需要进行`Clone`操作。
 
 https://git.coding.net/LiuXiaoZhuang/HomePageModuleSpec.git
-
-
 
 ### 搭建环境
 
@@ -44,7 +42,9 @@ pod spec create HomePageModule
 
 创建这个文件后，需要修改里面的一些东西，例如这里我用`HomePageModule`私有仓库做例子。这里面修改的东西，表示你的`Spec`私有仓库的一些特征，例如`name`、`source`、`version`之类的，在进行`pod search`操作时候的显示结果，也是由这个文件决定的。
 
-需要注意的是，下面的`source`设置为`HomePageModule`仓库而不是`Spec`仓库，这一步很多人都在这里犯错。
+下面`source_files`指定的是文件路径，也就是最终导入到项目中的文件。下面的`exclude_files`指定的是不需要的文件路径，这些文件即便在`source_files`中，也不会被包含在`Pods`仓库中。
+
+需要注意的是，下面的`source`设置为`HomePageModule`仓库而不是`Spec`仓库，这一步很多人都在这里犯错。另外，`podspec`文件中可能会有一些`Example`的字段，这些字段应该都进行修改，否则执行`pod`命令会报错。
 
 	Pod::Spec.new do |s|
 		s.name          = "HomePageModule"
@@ -62,8 +62,6 @@ pod spec create HomePageModule
 		s.frameworks    = 'UIKit'
 		s.platform      = :ios
 	end
-
-
 
 ### 开发过程
 
@@ -107,8 +105,6 @@ pod repo push HomePageModule HomePageModule.podspec
 
 提交给`Spec`私有仓库的文件，可以通过`.podspec`文件的`s.source_files`字段进行过滤，符合过滤条件的文件就都会被提交到`Spec`仓库。例如上面我们将所有`.h`和`.m`文件都提交到`Spec`仓库，除了这些还可以设置`imageAssets`、`XIB`、`Bundle`等文件。
 
-
-
 ### 使用私有仓库代码
 
 当`Spec`私有仓库中有可用的代码后，就可以通过`CocoaPods`命令来使用组件代码了。在`Podfile`文件中需要声明私有仓库地址，例如下面代码。
@@ -126,6 +122,32 @@ pod repo push HomePageModule HomePageModule.podspec
 在配置好这套环境后，之后的开发就只需要执行上面`pod repo push`的操作了。根据业务需求发布指定的组件版本，并将组件`push`到`Spec`私有仓库供其他人使用即可。
 
 版本控制也非常简单，只需要在`Podfile`中指定某个私有仓库的版本号即可。
+
+### Local Pods
+
+私有仓库调试比较麻烦，不可能是每修改一些代码，就提交到远端仓库，再拉下来验证代码是否有效。所以，为了提升开发效率，可以通过`LocalPods`的方式进行调试。或者不想用远端仓库，也可以直接用`LocalPods`的方案进行本地组件化，但是并不推荐这种方案，因为不能进行物理隔离。
+
+本地`LocalPods`仓库不需要单独创建，直接用之前的组件仓库。在`pods`中使用本地仓库时，需要指定对应路径。指定路径后，执行`pod install`即可集成本地仓库。为了方便指定本地路径，建议将组件仓库尽量放在一个文件夹下，例如叫做`LocalPods`。
+
+```objective-c
+pod 'Login', :path => './LocalPods/Login/'
+```
+
+通过上面的命令集成本地仓库后，`Pods`会生成一个和远程文件夹同级的文件，叫做`Development Pods`，这个文件夹就是本地仓库所在的位置。
+
+此时之前`Login`仓库的产物就被替换为本地`LocalPods`中`Login`代码的产物了，后面的修改都会影响这个产物。直到调试完成，将代码提交到组件仓库，将`path`路径删除重新执行`pod install`，产物就会被替换为组件仓库的产物。
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
